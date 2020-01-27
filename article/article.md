@@ -508,13 +508,13 @@ Our application is looking good. It also works. But, the data is all in memory. 
 ## Setting Up Our MongoDB Database
 Before we can save our data, we’ll need a database. For this I’ll use MongoDB and MongoDB Atlas to host my database. If you don’t already have MongoDB Atlas, you can sign up and use it for [free here](https://www.mongodb.com/download-center), otherwise go into an existing cluster and create a new database. Inside MongoDB Atlas, I will use an existing cluster and set up a new database called MCT. With this new database created, I will create a new collection called daily that will store my daily results, target macros, as well as allowed variants. 
 
-![MongoDB Atlas]('./images/mongodb-atlas.png')
+![MongoDB Atlas](./images/mongodb-atlas.png)
 
 With my database set up, I will also add a few days worth of data. Feel free to add your own data or if you’d like the dataset I’m using, you can get it here. I will use [MongoDB Compass](https://www.mongodb.com/download-center/compass) to import and view the data, but you can import the data however you want: use the CLI, add in manually, or use Compass.
 
 Thanks to MongoDB’s document model, I can represent the data exactly as I had it in-memory. The only additional fields I will have in my MongoDB model is an _id field that will be a unique identifier for the document and a date field that will represent the data for a specific date. The image below shows the data model for one document in MongoDB Compass.
 
-![MongoDB Compass]('./images/mongodb-compass.png')
+![MongoDB Compass](./images/mongodb-compass.png)
 
 Now that we have some real data to work with, let’s go ahead and connect our Next.js application to our MongoDB Database. Since Next.js is a React based framework that’s running Node server-side we will use the excellent Mongo Node Driver to facilitate this connection. 
 
@@ -535,7 +535,7 @@ export default (req, res) => {
 ```
 Save the file, go to your browser and navigate to `localhost:3000/api/daily`. What you’ll see is the JSON response of `{message:’Hello from the Daily route’}`. This code is only ever run server side and the only thing the browser receives is the response we send. This seems like the perfect place to set up our connection to MongoDB.
 
-![API Endpoint Response]('./images/api-response.png')
+![API Endpoint Response](./images/api-response.png)
 
 While we can set the connection in this daily.js file, in a real world application, we are likely to have multiple API endpoints and for that reason, it’s probably a better idea to establish our connection to the database in a middleware function that we can pass to all of our api routes. So as a best practice, let’s do that here.
 
@@ -590,7 +590,7 @@ export default handler;
 
 As you can see we now have a handler object that gives us much more flexibility. We can use different HTTP verbs, add our middleware, and more. What the code above does, is that it connects to our MongoDB Atlas cluster and from the MCT database and daily collection, finds and returns one item and then renders it to the screen. If we hit `localhost:3000/api/daily` now in our browser we’ll see this:
 
-![Daily API Response]('./images/daily-api.png')
+![Daily API Response](./images/daily-api.png)
 
 Woohoo! We have our data and the data model matches our in-memory data model, so our next step will be to use this real data instead of our in-memory sample. To do that, we’ll open up the index.js page.
 
@@ -689,7 +689,7 @@ return (
 
 We added two new methods, one to get the data from the previous day and one to get the data from the following day. In our UI we also made the date label dynamic so that it displays and tells us what day we are currently looking at. With these changes go ahead and refresh your browser and you should be able to see the new data for days you have entered in your database. If a particular date does not exist, it will show 0’s for everything.
 
-![MCT No Data]('./images/no-data-for-day.png')
+![MCT No Data](./images/no-data-for-day.png)
 
 
 ## Saving and Updating Data In MongoDB
