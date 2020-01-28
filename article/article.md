@@ -39,7 +39,7 @@ The areas we’re going to be focused on are the pages, components, and public d
 
 The pages directory will contain our application pages, or another way to think of these is that each file here will represent a single route in our application. Our default app only has the index.js page created which corresponds with our home route. If we wanted to add a second page, for example, an about page, we can easily do that by just creating a new file called about.js. The name we give to the filename will correspond to the route. So let’s go ahead and create an about.js file in the pages directory.
 
-As I mentioned earlier, Next.js is a React based framework, so all your React knowledge is fully transferable here. You can create components using either as functions or as classes. I will be using the function based approach. Our About.js component will look like this:
+As I mentioned earlier, Next.js is a React based framework, so all your React knowledge is fully transferable here. You can create components using either as functions or as classes. I will be using the function based approach. Feel free to grab the complete [GitHub repo](https://github.com/kukicado/building-modern-app-with-nextjs-and-mongodb) if you would like to follow along. Our About.js component will look like this:
 
 ```js
 import React from 'react'
