@@ -7,7 +7,7 @@ This codebase is the completed code for an article that covers how you can build
 ## Prerequisites
 
 - A recent version of Node.js.
-- MongoDB. Try [MongoDB Atlas](https://www.mongodb.com/download-center) for free.
+- MongoDB. Try [MongoDB Atlas](https://www.mongodb.com/download-center) for free. You can use code **ADO200** for a $200 credit.
 
 If you want to add sample data. You can find it in the included [data.json](./data.json) file. Import it into your database.
 
