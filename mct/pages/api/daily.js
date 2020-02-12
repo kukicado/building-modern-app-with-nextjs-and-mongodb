@@ -33,4 +33,4 @@ handler.post(async (req, res) => {
     res.json({message: 'ok'});
 })
 
-export default handler;
+export default (req, res) => handler.apply(req, res) 
